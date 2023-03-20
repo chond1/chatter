@@ -1,4 +1,5 @@
 import React from 'react'
+import AddPhotoAlternateOutlinedIcon from '@mui/icons-material/AddPhotoAlternateOutlined';
 
 const Register = () => {
   return (
@@ -12,7 +13,8 @@ const Register = () => {
                 <input type='password' placeholder="password"/>
                 <input style={{display:'none'}} type='file' id='file'/>
                 <label htmlFor='file'>
-                    <img src="" alt="" />
+                    <AddPhotoAlternateOutlinedIcon/>
+                    <span>Add an avatar</span>
                 </label>
                 <button>Sign up</button>
             </form>
