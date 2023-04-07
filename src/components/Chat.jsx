@@ -7,7 +7,7 @@ const Chat = () => {
   return (
     <div className='chat'>
       <div className='chatInfo'>
-        <span>Jane</span>
+        <span>Tylers</span>
         <div className='chatIcons'>
           <MoreVertIcon/>
         </div>
