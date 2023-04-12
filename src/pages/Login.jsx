@@ -19,12 +19,15 @@ const Login = () => {
       setErr(true);
     }
   };
+  const handleClick = () => {
+    navigate('/home')
+  }
   return (
     <div className="formContainer">
         <div className="formWrapper">
             <span className="logo">Chatter</span>
             <span className="title">Login</span>
-            <form onSubmit={handleSubmit}>
+            <form onSubmit={handleClick}>
                 <input type='email' placeholder="email"/>
                 <input type='password' placeholder="password"/>
                 <button>Sign in</button>

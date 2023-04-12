@@ -20,21 +20,17 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/">
-          <Route
-            index
-            element={
-              <ProtectedRoute>
-                <Home />
-              </ProtectedRoute>
-            }
-          />
-          <Route path="login" element={<Login />} />
-          <Route path="register" element={<Register />} />
-        </Route>
+        <Route path="/" element={<Navigate to="/login" />} />
+        <Route path="login" element={<Login />} />
+        <Route path="register" element={<Register />} />
+        <Route path="home" element={<Home />} />
       </Routes>
     </BrowserRouter>
   );
+  // return(
+  //   <div><Home /></div>
+    
+  // );
 }
 
 export default App;

@@ -4,12 +4,12 @@ import AddPhotoAlternateOutlinedIcon from '@mui/icons-material/AddPhotoAlternate
 import { auth, db, storage } from '../firebase';
 import { doc, setDoc, addDoc } from "firebase/firestore";
 import { ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
-import { Link } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 
 const Register = () => {
   const [err,setErr] = useState(false);
   const [loading, setLoading] = useState(false);
-
+  const navigate = useNavigate();
 
 
   const handleSubmit = async (e) => {
@@ -53,13 +53,15 @@ const Register = () => {
       setLoading(false);
     }
   };
-
+  const handleClick = () => {
+    navigate('/home')
+  }
   return (
     <div className="formContainer">
         <div className="formWrapper">
             <span className="logo">Chatter</span>
             <span className="title">Register</span>
-            <form onSubmit={handleSubmit}>
+            <form onSubmit={handleClick}>
                 <input type='text' placeholder="display name" />
             
                 <input type='email' placeholder="email"/>
@@ -69,8 +71,7 @@ const Register = () => {
                     <AddPhotoAlternateOutlinedIcon/>
                     <span>Add an avatar</span>
                 </label> */}
-                <button disabled='loading'>Sign up</button>
-                {loading && 'Uploading and compressing the image please wait...'}
+                <button>Sign up</button>
                 {err && <span>Something went wrong.</span>}
             </form>
             <p>Have an account already? <Link to="/login">Login</Link></p>
